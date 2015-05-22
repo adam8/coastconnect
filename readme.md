@@ -2,6 +2,8 @@
 
 This example demonstrates how to use RethinkDB with an Express JS application. It is an API style application that is secured using JSON web tokens. When a user logs in, they are issued a token. The client then attaches the token to every request to gain access to the protected resources.
 
+Forked from: https://github.com/cmwalsh/express_rethink
+
 ### Setup
 
 Make sure you have RethinkDB installed on your system by following the instructions found in the [RethinkDB documentation](http://rethinkdb.com/docs/install/).
