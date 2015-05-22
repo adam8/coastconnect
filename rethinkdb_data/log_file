@@ -34,3 +34,5 @@
 2015-05-22T08:18:07.391974000 0.803506s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2015-05-22T08:18:07.391979000 0.803511s notice: Server ready, "Adam8_MacBook_Air_3_local_kpr" 84fff07a-5f84-41bc-aaef-ec6b0b3fa0b2
 2015-05-22T08:18:08.251113000 1.662645s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-05-22T14:06:38.702254000 20676.753049s notice: Someone asked for the nonwhitelisted file "/rethinkdb-admin".  If this should be accessible, add it to the static web assets.
+2015-05-22T14:06:43.047409000 20681.098376s notice: Someone asked for the nonwhitelisted file "/rethinkdb-admin".  If this should be accessible, add it to the static web assets.
