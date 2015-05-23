@@ -20,7 +20,7 @@ router.post('/', function (request, response, next) {
 
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
-            if(!authenticated) {
+            if(authenticated) {
                 var currentUser = {
                     name: user.name,
                     email: user.email,
