@@ -16,11 +16,12 @@ router.post('/', function (request, response, next) {
             return next(userNotFoundError);
         }
         
-        console.log('user',user);
+        console.log('user...',user);
 
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
-            if(!authenticated) {
+            if(authenticated) {
+		console.log('is auth');
                 var currentUser = {
                     name: user.name,
                     email: user.email,
