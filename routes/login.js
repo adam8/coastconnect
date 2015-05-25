@@ -15,14 +15,10 @@ router.post('/', function (request, response, next) {
             userNotFoundError.status = 404;
             return next(userNotFoundError);
         }
-        
-        console.log('user...',user);
-        console.log('token',token.generate(user));
 
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
             if(authenticated) {
-                console.log('is auth');
                 var currentUser = {
                     name: user.name,
                     email: user.email,
