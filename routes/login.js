@@ -17,7 +17,6 @@ router.post('/', function (request, response, next) {
         }
         
         console.log('user...',user);
-        
         console.log('token',token.generate(user));
 
         auth.authenticate(request.body.password, user.password)
