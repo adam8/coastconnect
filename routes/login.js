@@ -21,7 +21,7 @@ router.post('/', function (request, response, next) {
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
             if(authenticated) {
-		console.log('is auth');
+                console.log('is auth');
                 var currentUser = {
                     name: user.name,
                     email: user.email,
