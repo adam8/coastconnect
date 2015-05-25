@@ -17,10 +17,12 @@ router.post('/', function (request, response, next) {
         }
         
         console.log('user...',user);
+        
+        console.log('token',token.generate(user));
 
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
-            if(!authenticated) {
+            if(authenticated) {
                 console.log('is auth');
                 var currentUser = {
                     name: user.name,
