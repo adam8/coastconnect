@@ -3,7 +3,6 @@ var express = require('express');
 var logger = require('morgan');
 var cors = require('cors');
 var helmet = require('helmet');
-global.Promise = require('bluebird'); //http://www.marcusoft.net/2015/01/koa-and-the-referenceerror-promise-is-not-defined.html
 
 require('dotenv').load();
 
@@ -27,7 +26,7 @@ app.use(function (error, request, response, next) {
     response.json({ error: error.message });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(3001, function () {
     var host = server.address().address;
     var port = server.address().port;
 
