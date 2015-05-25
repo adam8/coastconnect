@@ -31,6 +31,8 @@ router.post('/', auth.authorize, function (request, response) {
             email: request.body.email,
             password: hash
         };
+        
+        console.log(newUser);
 
         rdb.save('users', newUser)
         .then(function (result) {
