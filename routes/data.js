@@ -22,8 +22,7 @@ router.post('/', auth.authorize, function (request, response) {
     newEvents.push(newEvent);
   }
   
-  console.log('x-forwarded-for:', request.headers['x-forwarded-for'];
-  console.log('remoteAddress:', request.connection.remoteAddress;
+  console.log('request.headers:', request.headers;
   
   // console.log('events.length',events.length);
   // console.log('events',events);
