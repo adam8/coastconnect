@@ -22,9 +22,12 @@ router.post('/', auth.authorize, function (request, response) {
     newEvents.push(newEvent);
   }
   
-  console.log('events.length',events.length);
-  console.log('events',events);
-  console.log('newEvents',newEvents);
+  console.log('request.ip:', request.headers['x-forwarded-for'];
+  console.log('request.ip:', request.connection.remoteAddress;
+  
+  // console.log('events.length',events.length);
+  // console.log('events',events);
+  // console.log('newEvents',newEvents);
 
   rdb.save('events', newEvents)
   .then(function (result) {
