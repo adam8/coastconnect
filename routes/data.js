@@ -22,9 +22,10 @@ router.post('/', auth.authorize, function (request, response) {
     newEvents.push(newEvent);
   }
 
-  console.log(newEvents);
+  console.log('events',events);
+  console.log('newEvents',newEvents);
 
-  response.json({'hola':'hey'});
+  response.json({'hola':'heya'});
   // rdb.save('events', newEvents)
   // .then(function (result) {
   //     response.json(result);
