@@ -24,10 +24,11 @@ router.post('/', auth.authorize, function (request, response) {
 
   console.log(newEvents);
 
-  rdb.save('events', newEvents)
-  .then(function (result) {
-      response.json(result);
-  });
+  response.json({'hola':'hey'});
+  // rdb.save('events', newEvents)
+  // .then(function (result) {
+  //     response.json(result);
+  // });
 
 });
 
