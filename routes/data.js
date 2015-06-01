@@ -10,7 +10,7 @@ router.post('/', auth.authorize, function (request, response) {
   
   for (var i = 0; i < events.length; i++) {
     var newEvent = {
-      time:events[i].time// ,
+      'time':events[i].time// ,
 //       date: new Date(events[i].time * 1000),
 //       category:events[i].category,
 //       priority:events[i].priority,
@@ -21,7 +21,8 @@ router.post('/', auth.authorize, function (request, response) {
     };
     newEvents.push(newEvent);
   }
-
+  
+  console.log('events.length',events.length);
   console.log('events',events);
   console.log('newEvents',newEvents);
 
