@@ -10,19 +10,22 @@ router.post('/', auth.authorize, function (request, response) {
   
   for (var i = 0; i < events.length; i++) {
     var newEvent = {
-      time:events[i].time ,
-      date: new Date(events[i].time * 1000),
+      time:events[i].time,
+      date: new Date(events[i].time),
+      activity:events[i].activity,
+      detail:events[i].detail,
       category:events[i].category,
       priority:events[i].priority,
       deadline:events[i].deadline,
-      activity:events[i].activity,
-      detail:events[i].detail,
+      lat: events[i].lat,
+      long: events[i].long,
       link:events[i].link
     };
     newEvents.push(newEvent);
   }
   
   console.log('request.headers:', request.headers);
+  console.log('forwarded-for', request.headers['x-forwarded-for']);
   console.log('remoteAddress:', request.connection.remoteAddress);
   
   // console.log('events.length',events.length);
