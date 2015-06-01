@@ -22,8 +22,8 @@ router.post('/', auth.authorize, function (request, response) {
     newEvents.push(newEvent);
   }
   
-  
-  console.log('request.headers:', request.headers; 
+  console.log('request.headers:', request.headers);
+  console.log('remoteAddress:', request.connection.remoteAddress);
   
   // console.log('events.length',events.length);
   // console.log('events',events);
