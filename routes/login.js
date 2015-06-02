@@ -25,7 +25,6 @@ router.post('/', function (request, response, next) {
                     email: user.email,
                     token: token.generate(user)
                 };
-
                 response.json(currentUser);
             } else {
                 var authenticationFailedError = new Error('Authentication failed');
