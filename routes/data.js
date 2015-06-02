@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.post('/', auth.authorize, function (request, response) {
   
-  var ip = req.headers['x-forwarded-for'];
+  // var ip = request.headers['x-forwarded-for'];
   // console.log('forwarded-for', request.headers['x-forwarded-for']);
   
   // if (ip !== '24.207.111.128') {
