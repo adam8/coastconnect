@@ -48,7 +48,7 @@ router.put('/:id', auth.authorize, function (request, response) {
       streams: request.body.streams || user.streams
     };
 
-    rdb.edit('user', user.id, updateUser)
+    rdb.edit('users', user.id, updateUser)
     .then(function (results) {
       response.json(results);
     });
