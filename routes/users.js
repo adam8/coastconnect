@@ -41,6 +41,7 @@ router.post('/', auth.authorize, function (request, response) {
 router.put('/:id', auth.authorize, function (request, response) {
   rdb.find('users', request.params.id)
   .then(function (user) {
+    console.log('request.body',request.body);
     var updateUser = {
       name: request.body.user || user.name,
       email: request.body.email || user.email,
