@@ -6,8 +6,7 @@ var xml2js = require('xml2js');
 
 var router = express.Router();
 
-//router.post('/', auth.authorize, function (request, response) {
-router.post('/', function(request, response) {
+router.post('/', auth.authorize, function (request, response) {
   
   // var ip = request.headers['x-forwarded-for'];
   // console.log('forwarded-for', request.headers['x-forwarded-for']);
