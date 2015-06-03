@@ -24,6 +24,7 @@ router.post('/', function (request, response, next) {
                 name: user.name,
                 email: user.email,
                 streams: user.streams,
+                flagged: user.flagged,
                 token: token.generate(user)
               };
               response.json(currentUser);
