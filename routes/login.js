@@ -25,6 +25,7 @@ router.post('/', function (request, response, next) {
                 email: user.email,
                 streams: user.streams,
                 flagged: user.flagged,
+                dismissed: user.dismissed,
                 token: token.generate(user)
               };
               response.json(currentUser);
