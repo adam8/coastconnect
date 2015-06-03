@@ -1,11 +1,11 @@
 {
   "name": "express_rethink",
   "version": "0.0.2",
-  "description": "An Express JS and RethinkDB example",
-  "main": "app.js",
+  "description": "Express JS and RethinkDB sitting in a tree.",
+  "main": "api.js",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node api.js"
   },
   "author": "Craig Walsh",
   "license": "MIT",
@@ -19,6 +19,8 @@
     "jwt-simple": "^0.3.0",
     "moment": "^2.10.2",
     "morgan": "^1.5.2",
-    "rethinkdb": "^2.0.0"
+    "rethinkdb": "^2.0.0",
+    "xml2js": "^0.4.9",
+    "bluebird": "^2.9.27"
   }
 }
