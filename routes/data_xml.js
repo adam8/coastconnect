@@ -6,7 +6,8 @@ var xml2js = require('xml2js');
 
 var router = express.Router();
 
-router.post('/', auth.authorize, function (request, response) {
+//router.post('/', auth.authorize, function (request, response) {
+router.post('/', function (request, response) {
   
   // var ip = request.headers['x-forwarded-for'];
   // console.log('forwarded-for', request.headers['x-forwarded-for']);
@@ -21,6 +22,8 @@ router.post('/', auth.authorize, function (request, response) {
     var newEvents = [];
     
     parseString(xml, {trim: true}, function (err, result) {
+      
+        console.log('xml2json result: ', result);
       
         for (var i = 0; i < result.PublishMXASSETEM.MXASSETEMSet.length; i++) {
           var asset_status = result.PublishMXASSETEM.MXASSETEMSet[i].ASSET[0].STATUS[0]._;
