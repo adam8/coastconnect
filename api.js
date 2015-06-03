@@ -21,7 +21,7 @@ app.use(helmet());
 
 app.use('/users', users);
 app.use('/login', login);
-app.use('/data', data);
+app.use('/api/v1/data/json', data);
 
 app.use(function (error, request, response, next) {
     response.status(error.status || 500);
