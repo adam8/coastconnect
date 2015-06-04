@@ -34,10 +34,10 @@ router.get('/:id', auth.authorize, function (request, response, next) {
   })
   .then(function (flag_ids) {
     console.log('flag_ids',flag_ids);
-    return rdb.findArray('events', flag_ids);
+    rdb.findArray('events', flag_ids);
   })
   .then(function (events) {
-    console.log('last hop');
+    console.log('last hop: ', events);
     if(!events) {
       console.log('no flag event results');
       var notFoundError = new Error('No flags found');
@@ -45,7 +45,7 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       return next(notFoundError);
     }
     console.log('flag events result',findArray);
-    response.json(events);
+    response.json(events); 
   });
 
 });
