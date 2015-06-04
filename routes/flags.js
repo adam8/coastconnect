@@ -11,6 +11,7 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       notFoundError.status = 404;
       return next(notFoundError);
     }
+    console.log("found user: " + user.name);
     //r.table('events').getAll(r.args(flags)).run(conn, callback)
     rdb.findArray('events', user.flagged)
     .then(function (flags) {
