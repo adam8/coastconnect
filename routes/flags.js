@@ -33,6 +33,7 @@ router.get('/:id', auth.authorize, function (request, response, next) {
     
   })
   .then(function (flag_ids) {
+    console.log('flag_ids',flag_ids);
     rdb.findArray('events', flag_ids);
   })
   .then(function (events) {
