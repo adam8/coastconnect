@@ -12,9 +12,9 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       return next(notFoundError);
     }
     console.log("found user: " + user.name);
-    console.log('flagged... ' + user.flagged);
-    
     var flags = user.flagged;
+    console.log('flags ' + flags);
+    
     return flags;
     //r.table('events').getAll(r.args(flags)).run(conn, callback) 
     
@@ -33,7 +33,8 @@ router.get('/:id', auth.authorize, function (request, response, next) {
     
   })
   .then(function (flags) {
-    rdb.findArray('events', flags)
+    console.log('then... flags.')
+    return rdb.findArray('events', flags)
   })
   .then(function (events) {
     if(!events) {
