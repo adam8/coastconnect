@@ -33,12 +33,10 @@ router.get('/:id', auth.authorize, function (request, response, next) {
     
   })
   .then(function (flag_ids) {
-    console.log('then... flags:', flag_ids);
-    var events = rdb.findArray('events', flag_ids);
-    console.log(events);
-    return events;
+    rdb.findArray('events', flag_ids);
   })
   .then(function (events) {
+    console.log('last hop');
     if(!events) {
       console.log('no flag event results');
       var notFoundError = new Error('No flags found');
