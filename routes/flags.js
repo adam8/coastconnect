@@ -27,8 +27,10 @@ router.get('/:id', auth.authorize, function (request, response, next) {
     //   response.json(flags);
     // });
     
-    response.json(rdb.table('events').getAll(r.args([ '46dfb2f0-89e7-461b-82a5-e0dbc2a97cd3',
-    '8bd2202a-7854-4c9f-b2ff-12b9513c883e' ])).run(connection)); 
+    // response.json(rdb.table('events').getAll(r.args([ '46dfb2f0-89e7-461b-82a5-e0dbc2a97cd3',
+    // '8bd2202a-7854-4c9f-b2ff-12b9513c883e' ])).run(connection));
+    
+    response.json({'hola':'hey'});
     
   });
 });
