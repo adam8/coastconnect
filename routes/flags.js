@@ -12,15 +12,16 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       return next(notFoundError);
     }
     console.log("found user: " + user.name);
+    console.log('flagged: ' + user.flagged);
     //r.table('events').getAll(r.args(flags)).run(conn, callback)
     rdb.findArray('events', user.flagged)
-    .then(function (flags) {
-      if(!flags) {
+    .then(function (result) {
+      if(!result) {
         var notFoundError = new Error('No flags found');
         notFoundError.status = 404;
         return next(notFoundError);
       }
-      response.json(flags);
+      response.json(result);
     });
     
   });
