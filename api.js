@@ -9,6 +9,7 @@ require('dotenv').load();
 
 var users = require('./routes/users');
 var login = require('./routes/login');
+var flags = require('./routes/flags');
 var data_json = require('./routes/data_json');
 var data_xml = require('./routes/data_xml');
 
@@ -22,6 +23,7 @@ app.use(helmet());
 
 app.use('/users', users);
 app.use('/login', login);
+app.use('/flags', flags);
 app.use('/api/v1/data/json', data_json);
 app.use('/api/v1/data/xml', data_xml);
 
