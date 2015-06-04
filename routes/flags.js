@@ -27,6 +27,7 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       response.json(events);
     });
     
+    
   });
 
 });
