@@ -47,7 +47,8 @@ router.put('/:id', auth.authorize, function (request, response) {
       email: request.body.email || user.email,
       streams: request.body.streams || user.streams,
       flagged: request.body.flagged || user.flagged,
-      dismissed: request.body.dismissed|| user.dismissed
+      dismissed: request.body.dismissed || user.dismissed,
+      locations: request.body.locations || user.locations
     };
 
     rdb.edit('users', user.id, updateUser)
