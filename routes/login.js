@@ -23,9 +23,6 @@ router.post('/', function (request, response, next) {
                 user_id: user.id,
                 name: user.name,
                 email: user.email,
-                streams: user.streams,
-                flagged: user.flagged,
-                dismissed: user.dismissed,
                 location: user.location,
                 token: token.generate(user)
               };
