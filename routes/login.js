@@ -15,15 +15,18 @@ router.post('/', function (request, response, next) {
           userNotFoundError.status = 404;
           return next(userNotFoundError);
         }
-
+        
+        // to create first user, create at /rethinkdb-admin
+        // r.db('coastconnect').table('users').insert({"name":"Joe Blow", "email":"foo@bar.baz", "password":"hola"})
+        // uncomment this next line (and comment out the rest of this function) to generate the token key, used as x-api-token header
+        // response.json({'token':token.generate(user)});
         auth.authenticate(request.body.password, user.password)
         .then(function (authenticated) {
             if(authenticated) {
               var currentUser = {
-                user_id: user.id,
+                id: user.id,
                 name: user.name,
                 email: user.email,
-                location: user.location,
                 token: token.generate(user)
               };
               response.json(currentUser);

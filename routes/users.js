@@ -30,7 +30,6 @@ router.post('/', auth.authorize, function (request, response) {
       email: request.body.email,
       password: hash
     };
-    //console.log(newUser);
     rdb.save('users', newUser)
     .then(function (result) {
       response.json(result); 
@@ -41,14 +40,9 @@ router.post('/', auth.authorize, function (request, response) {
 router.put('/:id', auth.authorize, function (request, response) {
   rdb.find('users', request.params.id)
   .then(function (user) {
-    console.log('request.body.streams',request.body.streams);
     var updateUser = {
       name: request.body.user || user.name,
-      email: request.body.email || user.email,
-      streams: request.body.streams || user.streams,
-      flagged: request.body.flagged || user.flagged,
-      dismissed: request.body.dismissed || user.dismissed,
-      locations: request.body.locations || user.locations
+      email: request.body.email || user.email
     };
 
     rdb.edit('users', user.id, updateUser)
@@ -61,8 +55,8 @@ router.put('/:id', auth.authorize, function (request, response) {
 router.delete('/:id', auth.authorize, function (request, response) {
   rdb.destroy('users', request.params.id)
   .then(function (results) {
-        response.json(results);
-    });
+    response.json(results);
+  });
 });
 
 module.exports = router;
