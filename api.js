@@ -18,9 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(helmet());
 
-app.use('/users', users);
-app.use('/login', login);
-app.use('/posts', posts);
+app.use('/api/v1/users', users);
+app.use('/api/v1/login', login);
+app.use('/api/v1/posts', posts);
 
 app.use(function (error, request, response, next) {
     response.status(error.status || 500);
