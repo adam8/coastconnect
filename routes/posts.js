@@ -5,14 +5,14 @@ var utility = require('../lib/utility');
 var router = express.Router();
 
 
-router.get('/', auth.authorize, function (request, response) {
+router.get('/', function (request, response) {
   rdb.findAll('posts')
   .then(function (posts) {
       response.json(posts);
   });
 });
 
-router.get('/:id', auth.authorize, function (request, response, next) {
+router.get('/:id', function (request, response, next) {
   rdb.find('posts', request.params.slug)
   .then(function (post) {
     if(!post) {
