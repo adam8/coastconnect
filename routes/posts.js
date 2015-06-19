@@ -35,6 +35,7 @@ router.post('/', auth.authorize, function (request, response) {
     id: slug,
     title: request.body.title,
     text: request.body.text,
+    date_added: (new Date).getTime(),
     location: long + ',' + lat
   };
   rdb.save('posts', post)
