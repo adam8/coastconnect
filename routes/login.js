@@ -17,7 +17,7 @@ router.post('/', function (request, response, next) {
         }
         
         // to create first user, create at /rethinkdb-admin
-        // r.db('coastconnect').table('users').insert({"name":"Joe Blow", "email":"foo@bar.baz", "password":"hola"})
+        // r.db('coasteasy').table('users').insert({"name":"Joe Blow", "email":"foo@bar.baz", "password":"hola"})
         // uncomment this next line (and comment out the rest of this function) to generate the token key, used as x-api-token header
 
 //      response.json({'token':token.generate(user)});

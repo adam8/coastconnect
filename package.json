@@ -1,5 +1,5 @@
 {
-  "name": "coastconnectbc",
+  "name": "coasteasy-frontend",
   "version": "0.0.3",
   "description": "ExpressJS / RethinkDB api",
   "main": "api.js",
