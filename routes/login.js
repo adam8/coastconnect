@@ -25,10 +25,8 @@ router.post('/', function (request, response, next) {
         .then(function (authenticated) {
             if(authenticated) {
               var currentUser = {
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                token: token.generate(user)
+                user: { 'id': user.id, 'email': user.email, 'name': user.name },
+                token: token.generate(user) 
               };
               response.json(currentUser);
             } else {
