@@ -17,8 +17,8 @@ router.get('/:id', auth.authorize, function (request, response, next) {
       var notFoundError = new Error('User not found');
       notFoundError.status = 404;
       return next(notFoundError);
-    }
-    response.json(user);
+    } 
+    response.json({ 'email': user.email, 'name': user.name, 'id': user.id });
   });
 });
 
