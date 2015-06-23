@@ -49,7 +49,7 @@ router.put('/:id', auth.authorize, function (request, response) {
   .then(function (post) {
     var updatedPost = {
       title: request.body.title || post.title,
-      text: request.body.text || post.title
+      text: request.body.text || post.text
     };
     rdb.edit('posts', post.id, updatedPost)
     .then(function (results) {
