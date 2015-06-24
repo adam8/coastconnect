@@ -29,18 +29,18 @@ router.post('/', auth.authorize, function (request, response) {
     response.status(500).json({ error: 'Title missing.' });
   }
   var slug = utility.slugify(request.body.title) + '-' + Math.floor(Math.random() * 1000000);
-  var lat = request.body.lat;
-  var long = request.body.long;
+  // var lat = request.body.lat;
+  // var long = request.body.long;
   var post = {
     id: slug,
     title: request.body.title,
     text: request.body.text,
-    date_added: (new Date).getTime(),
-    location: long + ',' + lat
+    date_added: (new Date).getTime()
+    // location: long + ',' + lat
   };
   rdb.save('posts', post)
   .then(function (result) {
-    response.json(result); 
+    response.json(result);
   });
 });
 
