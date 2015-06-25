@@ -9,6 +9,7 @@ require('dotenv').load();
 var users = require('./routes/users');
 var login = require('./routes/login');
 var posts = require('./routes/posts');
+var votes = require('./routes/votes');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(helmet());
 app.use('/api/v1/users', users);
 app.use('/api/v1/login', login);
 app.use('/api/v1/posts', posts);
+app.use('/api/v1/votes', votes);
 
 app.use(function (error, request, response, next) {
     response.status(error.status || 500);
